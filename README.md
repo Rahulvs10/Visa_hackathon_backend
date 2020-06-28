@@ -8,7 +8,9 @@ $ git clone https://github.com/Rahulvs10/Visa_hackathon_backend
 $ cd Visa_hackathon_backend
 ```
 
-Create config/config.json using config/config.json.example as reference.
+1) Create `config/config.json` using `config/config.json.example` as reference.
+2) Add `cert.pem`, `DigCertGlobalRootCA.cer`, `privateKey.pem` files to the certificates' directory.
+3) Create `config/credentials.json` using `config/credentials.json.example` as reference.
 
 Download the node dependencies
 ```shell script

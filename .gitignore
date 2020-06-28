@@ -6,3 +6,5 @@ coverage
 build/
 .idea/
 config/config.json
+config/credentials.json
+certificates/

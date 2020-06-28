@@ -62,7 +62,7 @@ let register = async (req, res) => {
 
 let login = async (req, res) => {
   try {
-    let associationCollection = await Association.findOne({where:{email: req.body.email}})
+    let associationCollection = await Association.findOne({where: {email: req.body.email}})
     if (associationCollection.password === utils.encryptString(req.body.password)) {
       const date = new Date();
       const timestamp = date.getTime();

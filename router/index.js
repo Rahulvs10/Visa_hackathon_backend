@@ -1,5 +1,6 @@
 const Association = require("../models").Association;
 const associationController = require("../controller/").association;
+const merchantController = require("../controller/").merchant;
 
 // sessionChecker middlewares
 let authMiddleware = async (req, res, next) => {
@@ -32,4 +33,7 @@ module.exports = app => {
 
   app.put("/api/association/:userId", associationController.update)
 
+  app.post("/api/merchant/locator", merchantController.merchantLocator)
+
+  app.post("/api/atm/locator", merchantController.atmLocator)
 }
