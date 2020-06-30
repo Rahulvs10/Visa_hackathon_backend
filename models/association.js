@@ -9,16 +9,24 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       type: DataTypes.STRING
     },
-    phno:{
+    phno: {
       allowNull: false,
       unique: true,
       type: DataTypes.BIGINT
     },
-    password:{
+    cardno: {
+      unique: true,
+      type: DataTypes.BIGINT
+    },
+    acquiringBin: {
+      unique: true,
+      type: DataTypes.BIGINT
+    },
+    password: {
       allowNull: false,
       type: DataTypes.STRING
     },
-    token:{
+    token: {
       type: DataTypes.STRING
     }
   })

@@ -1,6 +1,7 @@
 const Association = require("../models").Association;
 const utils = require("../helpers/utils")
 const validator = require('validator');
+const vdp = require("../helpers/vdp")
 
 const registerHelper = async (req) => {
   if (!req.body.email || !validator.isEmail(req.body.email)) {
@@ -95,9 +96,25 @@ let update = async (req, res) => {
   }
 }
 
+let payDrivers = async (req, res) => {
+  try {
+     const response = await vdp.reqVisa(
+      {
+        payload: req.body.payload,
+        path: '/visadirect/fundstransfer/v1/multipushfundstransactions'
+      }
+    );
+    res.status(201).send(response)
+  } catch (e) {
+    console.log(e)
+    res.status(500).send(e)
+  }
+}
+
 module.exports = {
   getAllAssociations: getAllAssociations,
   register: register,
   update: update,
-  login: login
+  login: login,
+  payDrivers: payDrivers
 }

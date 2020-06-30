@@ -28,6 +28,12 @@ module.exports = {
     token: {
       type: Sequelize.STRING
     },
+    cardno: {
+      type: Sequelize.BIGINT
+    },
+    acquiringBin: {
+      type: Sequelize.BIGINT
+    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE,

@@ -18,6 +18,9 @@ module.exports = {
         as: "associationId",
       },
     },
+    cardno: {
+      type: Sequelize.BIGINT
+    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE,

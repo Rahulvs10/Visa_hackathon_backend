@@ -30,7 +30,23 @@ let atmLocator = async (req, res) => {
   }
 }
 
+let merchantPushPayments = async (req, res) => {
+  try {
+    const response = await vdp.reqVisa(
+      {
+        payload: req.body.payload,
+        path: '/visadirect/mvisa/v1/merchantpushpayments'
+      }
+    );
+    res.status(201).send(response)
+  } catch (e) {
+    console.log(e)
+    res.status(400).send(e)
+  }
+}
+
 module.exports = {
   merchantLocator: merchantLocator,
-  atmLocator: atmLocator
+  atmLocator: atmLocator,
+  merchantPushPayments: merchantPushPayments
 }

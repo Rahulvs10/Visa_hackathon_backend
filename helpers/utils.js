@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-module.exports.encryptString =  ( string, salt = "CUSTOM_SALT") => {
+module.exports.encryptString = (string, salt = "CUSTOM_SALT") => {
   return crypto.createHash('sha256')
     .update(string, "utf8")
     .update(makeHash(salt))

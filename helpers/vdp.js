@@ -9,7 +9,7 @@ let reqVisa = async (parameters) => {
     let response = await vdp_api.makeRequest(parameters);
     return response.response.body;
   } catch (e) {
-    console.log('Error is: ' + e);
+    console.log('Error is: ', e);
   }
 }
 

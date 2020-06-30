@@ -30,10 +30,14 @@ module.exports = app => {
   app.post("/api/association/register", associationController.register)
 
   app.post("/api/association/login", associationController.login)
+  
+  app.post("/api/association/pay", associationController.payDrivers)
 
   app.put("/api/association/:userId", associationController.update)
 
   app.post("/api/merchant/locator", merchantController.merchantLocator)
 
   app.post("/api/atm/locator", merchantController.atmLocator)
+  
+  app.post("/api/merchant/pay", merchantController.merchantPushPayments)
 }
