@@ -19,7 +19,6 @@ module.exports = {
       allowNull: false,
       unique: true,
       type: Sequelize.BIGINT,
-
     },
     password: {
       allowNull: false,

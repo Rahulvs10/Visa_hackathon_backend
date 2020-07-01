@@ -10,6 +10,11 @@ module.exports = {
       type: Sequelize.STRING,
       allowNull: false,
     },
+    phno: {
+      allowNull: false,
+      unique: true,
+      type: Sequelize.BIGINT,
+    },
     associationId: {
       type: Sequelize.INTEGER,
       references: {
@@ -20,6 +25,12 @@ module.exports = {
     },
     cardno: {
       type: Sequelize.BIGINT
+    },
+    otp: {
+      type: Sequelize.INTEGER
+    },
+    token: {
+      type: Sequelize.STRING
     },
     createdAt: {
       allowNull: false,

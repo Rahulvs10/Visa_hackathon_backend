@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "npx nodemon --exec babel-node server.js",
-    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config"
+    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
+    "migrate": "sequelize-cli db:migrate"
   },
   "author": "",
   "license": "ISC",

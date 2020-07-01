@@ -15,9 +15,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT
     },
     cardno: {
-      allowNull: false,
+      allowNull: true,
       unique: true,
       type: DataTypes.BIGINT
     },
+    otp: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    },
+    token: {
+      type: DataTypes.STRING
+    }
   })
 }

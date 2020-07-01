@@ -19,7 +19,7 @@ $ npm install
 
 Migrate the database
 ```shell script
-$ sequelize-cli db:migrate
+$ npm run migrate
 ```
 Run the project in development environment
 ```shell script
