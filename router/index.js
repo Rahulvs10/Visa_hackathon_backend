@@ -49,6 +49,7 @@ module.exports = app => {
 
   app.post("/api/driver/generateOtp", driverController.generateOtp)
   app.post("/api/driver/login", driverController.login)
+  app.post("/api/driver/getTransactionControls", driverController.getTransactionControls)
 
   app.post("/api/merchant/locator", merchantController.merchantLocator)
   app.post("/api/atm/locator", merchantController.atmLocator)

@@ -29,6 +29,9 @@ module.exports = {
     otp: {
       type: Sequelize.INTEGER
     },
+    expenses: {
+      type: Sequelize.STRING
+    },
     token: {
       type: Sequelize.STRING
     },

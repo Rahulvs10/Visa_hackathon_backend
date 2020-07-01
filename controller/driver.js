@@ -35,17 +35,17 @@ let login = async (req, res) => {
   }
 }
 
-let update = async (req, res) => {
+let getTransactionControls = async (req, res) => {
   try {
-    const associationCollection = await Association.find({
-      id: req.params.AssociationId,
-    })
-    if (associationCollection) {
-      const updatedAssociation = await Association.update(req.body)
-      res.status(201).send(updatedAssociation)
-    } else {
-      res.status(404).send("Association Not Found")
-    }
+    const response = await vdp.reqVisa(
+      {
+        payload: {
+          "primaryAccountNumber": "4514170000000001"
+        },
+        path: '/vctc/customerrules/v1/consumertransactioncontrols/inquiries/cardinquiry'
+      }
+    );
+    res.status(201).send(response)
   } catch (e) {
     console.log(e)
     res.status(500).send(e)
@@ -53,7 +53,7 @@ let update = async (req, res) => {
 }
 
 module.exports = {
-  update: update,
   login: login,
-  generateOtp: generateOtp
+  generateOtp: generateOtp,
+  getTransactionControls: getTransactionControls
 }

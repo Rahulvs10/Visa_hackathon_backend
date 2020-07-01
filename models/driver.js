@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     token: {
       type: DataTypes.STRING
-    }
+    },
+    expenses: {
+      type: DataTypes.STRING
+    },
   })
 }
